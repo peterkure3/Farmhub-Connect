@@ -1,302 +1,425 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farmhub Connect - Buy and Sell Agricultural Products</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Welcome To FarmHub-Connect</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <div class="nav__bar">
+          <div class="logo">
+            <a href="#"><img src="assets/logo.jpeg" alt="logo" /></a>
+          </div>
+          <div class="nav__menu__btn" id="menu-btn">
+            <i class="ri-menu-line"></i>
+          </div>
+        </div>
+        <ul class="nav__links" id="nav-links">
+          <ul class="nav__links" id="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#service">Services</a></li>
+            <li><a href="#explore">Explore</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <a href="./sell_form.html" class="btn nav__btn">Sell</a>
 
-        header {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+          
+          <div class="search__container">
+            <input type="text" id="searchInput" placeholder="Search for products...">
+            <button class="btn" onclick="searchProducts()">Search</button>
+          </div>
+          
+          
 
-        section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+      </nav>
+      <div class="section__container header__container" id="home">
+        <p>Simple - Unique - Friendly</p>
+        <h1>Make Yourself At Home<br />On <span>FarmHub-Connect</span>.</h1>
+      </div>
+    </header>
 
-        h1, h2, h3 {
-            color: #333;
-        }
+    <section class="section__container booking__container">
+      <form action="/" class="booking__form">
+        <div class="input__group">
+          <span><i class="ri-calendar-2-fill"></i></span>
+          <div>
+            <a href="./Login/Login.html"label for="check-in">Sign Up</label></a>
+            <input type="text" placeholder="Check In" />
+          </div>
+        </div>
+        <div class="input__group">
+          <span><i class="ri-calendar-2-fill"></i></span>
+          <div>
+            <a href="./Login/Login.html"label for="check-in">Login</label></a>
+            <input type="text" placeholder="Check Out" />
+          </div>
+        </div>
+        <div class="input__group">
+          <span><i class="ri-user-fill"></i></span>
+          <div>
+            <label for="guest">FARMERS</label>
+            <input type="text" placeholder="Guest" />
+          </div>
+        </div>
+        <div class="input__group input__btn">
+          <a href="./Login/Login.html"button class="btn">Login</button></a>
+        </div>
+      </form>
+    </section>
 
-        p {
-            line-height: 1.6;
-        }
+    <section class="section__container about__container" id="about">
+      <div class="about__image">
+        <img src="assets/about.jpg" alt="about" />
+      </div>
+      <div class="about__content">
+        <p class="section__subheader">ABOUT US</p>
+        <h2 class="section__header">Experience What Uganda's Best Farmers Have To Offer</h2>
+        <p class="section__description">
+          🌱 Welcome to FarmHub! 🚜
 
-        .cta-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+We're the heartbeat of agriculture, connecting farmers with markets and opportunities. 🌍 Our mission? Empowering farmers, one click at a time! 💪
 
-        .cta-button:hover {
-            background-color: #45a049;
-        }
+Join us in revolutionizing the way farmers grow, sell, and thrive! 🌟 Let's sow the seeds of success together! 🌿🌟
+        </p>
+        <div class="about__btn">
+          <button class="btn">Read More</button>
+        </div>
+      </div>
+    </section>
 
-        .products-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
+    <section class="section__container room__container">
+      <p class="section__subheader">OUR FARMERS</p>
+      <h2 class="section__header">PRODUCTS ON OFFER </h2>
+      <div class="room__grid">
+        <div class="room__card">
+          <div class="room__card__image">
+            <img src="assets/beans.png" alt="room" />
+            <div class="room__card__icons">
+              <span><i class="ri-heart-fill"></i></span>
+              <span><i class="ri-paint-fill"></i></span>
+              <span><i class="ri-shield-star-line"></i></span>
+            </div>
+          </div>
+          <div class="room__card__details">
+            <h4>Beans</h4>
+            <p>
+              Experience and Explore a variety of Beans.
+            </p>
+            <h5>Starting from <span>shs.3,500 / Per Kilo</span></h5>
+            <h5>Farmer: <span>Sarah Musenguzi</span></h5>
+            <button class="btn">Sign Up</button>
+          </div>
+        </div>
+        <div class="room__card">
+          <div class="room__card__image">
+            <img src="assets/eggs.jpg" alt="room" />
+            <div class="room__card__icons">
+              <span><i class="ri-heart-fill"></i></span>
+              <span><i class="ri-paint-fill"></i></span>
+              <span><i class="ri-shield-star-line"></i></span>
+            </div>
+          </div>
+          <div class="room__card__details">
+            <h4>Eggs</h4>
+            <p>
+              Experience Good Quality Eggs
+            </p>
+            <h5>Starting from <span>Shs.12,000/Fresh</span></h5>
+            <h5>Farmer: <span>Mary Atunkira</span></h5>
+            <button class="btn">Sign Up</button>
+          </div>
+        </div>
+        <div class="room__card">
+          <div class="room__card__image">
+            <img src="assets/hero8.jpg" alt="room" />
+            <div class="room__card__icons">
+              <span><i class="ri-heart-fill"></i></span>
+              <span><i class="ri-paint-fill"></i></span>
+              <span><i class="ri-shield-star-line"></i></span>
+            </div>
+          </div>
+          <div class="room__card__details">
+            <h4>Cows</h4>
+            <p>
+              Good, Stable and Reliable Cows of Different Varities.
+            </p>
+            <h5>Starting from <span>Shs.1,200,000/Fresh</span></h5>
+            <h5>Farmer: <span>Joyce Munezimba</span></h5>
+            <button class="btn">Sign Up</button>
+          </div>
+        </div>
+      </div>
+      <div class="room__grid">
+        <div class="room__card">
+          <div class="room__card__image">
+            <img src="assets/beans1.jpg" alt="room" />
+            <div class="room__card__icons">
+              <span><i class="ri-heart-fill"></i></span>
+              <span><i class="ri-paint-fill"></i></span>
+              <span><i class="ri-shield-star-line"></i></span>
+            </div>
+          </div>
+          <div class="room__card__details">
+            <h4>Beans</h4>
+            <p>
+              Experience and Explore a variety of Beans.
+            </p>
+            <h5>Starting from <span>shs.3,500 / Per Kilo</span></h5>
+            <h5>Farmer: <span>Sarah Musenguzi</span></h5>
+            <button class="btn">Sign Up</button>
+          </div>
+        </div>
+        <div class="room__card">
+          <div class="room__card__image">
+            <img src="assets/eggs1.jpg" alt="room" />
+            <div class="room__card__icons">
+              <span><i class="ri-heart-fill"></i></span>
+              <span><i class="ri-paint-fill"></i></span>
+              <span><i class="ri-shield-star-line"></i></span>
+            </div>
+          </div>
+          <div class="room__card__details">
+            <h4>Eggs</h4>
+            <p>
+              Experience Good Quality Eggs
+            </p>
+            <h5>Starting from <span>Shs.12,000/Fresh</span></h5>
+            <h5>Farmer: <span>Mary Atunkira</span></h5>
+            <button class="btn">Sign Up</button>
+          </div>
+        </div>
+        <div class="room__card">
+          <div class="room__card__image">
+            <img src="assets/cows.jpg" alt="room" />
+            <div class="room__card__icons">
+              <span><i class="ri-heart-fill"></i></span>
+              <span><i class="ri-paint-fill"></i></span>
+              <span><i class="ri-shield-star-line"></i></span>
+            </div>
+          </div>
+          <div class="room__card__details">
+            <h4>Cows</h4>
+            <p>
+              Good, Stable and Reliable Cows of Different Varities.
+            </p>
+            <h5>Starting from <span>Shs.1,200,000/Fresh</span></h5>
+            <h5>Farmer: <span>Joyce Munezimba</span></h5>
+            <button class="btn">Sign Up</button>
+          </div>
+        </div>
+      </div>
+      <div class="room__grid">
+        <div class="room__card">
+          <div class="room__card__image">
+            <img src="assets/beans.png" alt="room" />
+            <div class="room__card__icons">
+              <span><i class="ri-heart-fill"></i></span>
+              <span><i class="ri-paint-fill"></i></span>
+              <span><i class="ri-shield-star-line"></i></span>
+            </div>
+          </div>
+          <div class="room__card__details">
+            <h4>Beans</h4>
+            <p>
+              Experience and Explore a variety of Beans.
+            </p>
+            <h5>Starting from <span>shs.3,500 / Per Kilo</span></h5>
+            <h5>Farmer: <span>Sarah Musenguzi</span></h5>
+            <button class="btn">Sign Up</button>
+          </div>
+        </div>
+        <div class="room__card">
+          <div class="room__card__image">
+            <img src="assets/eggs.jpg" alt="room" />
+            <div class="room__card__icons">
+              <span><i class="ri-heart-fill"></i></span>
+              <span><i class="ri-paint-fill"></i></span>
+              <span><i class="ri-shield-star-line"></i></span>
+            </div>
+          </div>
+          <div class="room__card__details">
+            <h4>Eggs</h4>
+            <p>
+              Experience Good Quality Eggs
+            </p>
+            <h5>Starting from <span>Shs.12,000/Fresh</span></h5>
+            <h5>Farmer: <span>Mary Atunkira</span></h5>
+            <button class="btn">Sign Up</button>
+          </div>
+        </div>
+        <div class="room__card">
+          <div class="room__card__image">
+            <img src="assets/hero8.jpg" alt="room" />
+            <div class="room__card__icons">
+              <span><i class="ri-heart-fill"></i></span>
+              <span><i class="ri-paint-fill"></i></span>
+              <span><i class="ri-shield-star-line"></i></span>
+            </div>
+          </div>
+          <div class="room__card__details">
+            <h4>Cows</h4>
+            <p>
+              Good, Stable and Reliable Cows of Different Varities.
+            </p>
+            <h5>Starting from <span>Shs.1,200,000/Fresh</span></h5>
+            <h5>Farmer: <span>Joyce Munezimba</span></h5>
+            <button class="btn">Sign Up</button>
+          </div>
+        </div>
+      </div>
+      <div class="room__grid">
+        <div class="room__card">
+          <div class="room__card__image">
+            <img src="assets/beans.png" alt="room" />
+            <div class="room__card__icons">
+              <span><i class="ri-heart-fill"></i></span>
+              <span><i class="ri-paint-fill"></i></span>
+              <span><i class="ri-shield-star-line"></i></span>
+            </div>
+          </div>
+          <div class="room__card__details">
+            <h4>Beans</h4>
+            <p>
+              Experience and Explore a variety of Beans.
+            </p>
+            <h5>Starting from <span>shs.3,500 / Per Kilo</span></h5>
+            <h5>Farmer: <span>Sarah Musenguzi</span></h5>
+            <button class="btn">Sign Up</button>
+          </div>
+        </div>
+        <div class="room__card">
+          <div class="room__card__image">
+            <img src="assets/eggs.jpg" alt="room" />
+            <div class="room__card__icons">
+              <span><i class="ri-heart-fill"></i></span>
+              <span><i class="ri-paint-fill"></i></span>
+              <span><i class="ri-shield-star-line"></i></span>
+            </div>
+          </div>
+          <div class="room__card__details">
+            <h4>Eggs</h4>
+            <p>
+              Experience Good Quality Eggs
+            </p>
+            <h5>Starting from <span>Shs.12,000/Fresh</span></h5>
+            <h5>Farmer: <span>Mary Atunkira</span></h5>
+            <button class="btn">Sign Up</button>
+          </div>
+        </div>
+        <div class="room__card">
+          <div class="room__card__image">
+            <img src="assets/hero8.jpg" alt="room" />
+            <div class="room__card__icons">
+              <span><i class="ri-heart-fill"></i></span>
+              <span><i class="ri-paint-fill"></i></span>
+              <span><i class="ri-shield-star-line"></i></span>
+            </div>
+          </div>
+          <div class="room__card__details">
+            <h4>Cows</h4>
+            <p>
+              Good, Stable and Reliable Cows of Different Varities.
+            </p>
+            <h5>Starting from <span>Shs.1,200,000/Fresh</span></h5>
+            <h5>Farmer: <span>Joyce Munezimba</span></h5>
+            <button class="btn">Sign Up</button>
+          </div>
+        </div>
+      </div>
 
-        .product {
-            width: calc(33.33% - 20px);
-            margin-bottom: 20px;
-            box-sizing: border-box;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
+        
+    </section>
 
-        .product:hover {
-            transform: scale(1.05);
-        }
+    <section class="service" id="service">
+      <div class="section__container service__container">
+        <div class="service__content">
+          <p class="section__subheader">SERVICES</p>
+          <h2 class="section__header">Strive Only For The Best.</h2>
+          <ul class="service__list">
+            <li>
+              <span><i class="ri-shield-star-line"></i></span>
+              Creating Market
+            </li>
+            <li>
+              <span><i class="ri-24-hours-line"></i></span>
+              Hostong Platform
+            </li>
+            <li>
+              <span><i class="ri-headphone-line"></i></span>
+              Facilitating Buy and Sale.
+            </li>
+            <li>
+              <span><i class="ri-map-2-line"></i></span>
+              Creating Connections Between the Farmers and You.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-        @media (max-width: 768px) {
-            .product {
-                width: calc(50% - 20px);
-            }
-        }
+    <section class="section__container banner__container">
+      <div class="banner__content">
+        <div class="banner__card">
+          <h4>0+</h4>
+          <p>Farmers Available</p>
+        </div>
+        <div class="banner__card">
+          <h4>0+</h4>
+          <p>Deals Made</p>
+        </div>
+        <div class="banner__card">
+          <h4>0+</h4>
+          <p>Happy Customers</p>
+        </div>
+      </div>
+    </section>
 
-        .product img {
-            max-width: 100%;
-            margin-right: 20px;
-            border-radius: 8px;
-        }
+    <section class="explore" id="explore">
+      <p class="section__subheader">EXPLORE</p>
+      <h2 class="section__header">What's New Today.</h2>
+      <div class="explore__bg">
+        <div class="explore__content">
+          <p class="section__description">10th FEB 2024</p>
+          <h4>A New Farmer Available On Our Platform.</h4>
+          <button class="btn">Continue</button>
+        </div>
+      </div>
+    </section>
 
-        .product-details {
-            flex-grow: 1;
-        }
+    <footer class="footer" id="contact">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <div class="logo">
+            <a href="#home"><img src="assets/logo.jpeg" alt="logo" /></a>
+          </div>
+          <p class="section__description">
+            Discover a world of Different products on offer that you'd never Experienced before.
+          </p>
+          <a href="./Login/Login.html"button class="btn">Sign Up</button></a>
+        </div>
 
-        .product-details h3 {
-            color: #4CAF50;
-            margin-top: 0;
-        }
+       
+          <h4>CONTACT US</h4>
+         
+          <div class="footer__socials">
+            <a href="#"><img src="assets/facebook.png" alt="facebook" /></a>
+            <a href="#"><img src="assets/instagram.png" alt="instagram" /></a>
+            <a href="#"><img src="assets/twitter.png" alt="twitter" /></a>
+          </div>
+        </div>
+      </div>
+     
+    </footer>
 
-        .search-bar {
-            margin: 10px 0;
-            padding: 10px;
-            width: 100%;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        #searchInput {
-            flex-grow: 1;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            margin-right: 10px;
-        }
-
-        .search-results {
-            margin-top: 20px;
-        }
-
-        .sell-button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .sell-button:hover {
-            background-color: #45a049;
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-    border-radius: 8px;
-}
-    </style>
-
-</head>
-<body>
-
-<header>
-    <h1>Farmhub Connect - Buy and Sell Agricultural Products</h1>
-    <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="Search for products...">
-        <button class="cta-button" onclick="searchProducts()">Search</button>
-        <a href="login.html" class="sell-button">Sell</a> 
-    </div>
-</header>
-
-<section>
-    <h2>Find Quality Agricultural Products on FarmersMarket</h2>
-    <p>
-        Explore a variety of fresh and locally sourced agricultural products. From organic fruits to farm-fresh eggs, discover amazing deals on FarmersMarket.
-    </p>
-
-    <h2>Featured Agricultural Products</h2>
-
-    <div class="products-container">
-        <!-- Dynamic products from the db  here -->
-    </div>
-    <div id="productModal" class="modal">
-        <div id="productModalContent" class="modal-content"></div>
-    </div>
-
-    </div>
-
-    <div class="search-results" id="searchResults"></div>
-
-    <p>
-        <a href="signup.html" class="cta-button">Register to Sell Your Products</a>
-    </p>
-</section>
-
-<footer>
-    <p>&copy; 2024 Farmhub Connect UgandaFarmersMarket. All rights reserved.</p>
-</footer>
-
-<script>
-    window.onload = function() {
-        fetchProducts();
-    };
-
-    function fetchProducts() {
-        fetch('http://127.0.0.1:3000/api/products') 
-            .then(response => response.json())
-            .then(products => {
-                console.log('Products:', products); 
-                renderProducts(products);
-            })
-            .catch(error => {
-                console.error('Error fetching products:', error); 
-            });
-    }
-
-    function renderProducts(products) {
-        const container = document.querySelector('.products-container');
-        container.innerHTML = ''; 
-
-        products.forEach(product => {
-            // console.log('Rendering product:', product); 
-            const productDiv = document.createElement('div');
-            productDiv.className = 'product';
-
-            productDiv.innerHTML = `
-                <img src="${product.imageurl}" alt="${product.name}">
-                <div class="product-details">
-                    <h3>${product.name}</h3>
-                    <p>Price: ${product.price}</p>
-                    <!-- <p>Contact: ${product.contact}</p> -->
-                    <!-- <p>Location: ${product.location}</p> -->
-                </div>
-            `;
-            productDiv.addEventListener('click', () => {
-                displayProductDetails(product);
-            });
-
-            container.appendChild(productDiv);
-        });
-    }
-    document.getElementById('searchInput').addEventListener('input', searchProducts);
-    function searchProducts() {
-    const searchText = document.getElementById('searchInput').value;
-    if (searchText.trim() !== '') {
-        fetch(`http://127.0.0.1:3000/api/products/filter/${encodeURIComponent(searchText)}`)
-            .then(response => response.json())
-            .then(products => {
-                renderProducts(products);
-            })
-            .catch(error => {
-                console.error('Error fetching filtered products:', error);
-            });
-    } else {
-        fetchProducts(); 
-    }
-    }
-    function fetchProducts() {
-    fetch('http://127.0.0.1:3000/api/products')
-        .then(response => response.json())
-        .then(products => {
-            renderProducts(products);
-        })
-        .catch(error => {
-            console.error('Error fetching products:', error);
-        });
-    }
-    window.onclick = function(event) {
-    const modal = document.getElementById('productModal');
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-function displayProductDetails(product) {
-    // Assuming you have a modal div with the id 'productModal'
-    const modalContent = document.getElementById('productModalContent');
-    modalContent.innerHTML = `
-        <h2>${product.name}</h2>
-        <p><strong>Price:</strong> ${product.price}</p>
-        <p><strong>Contact:</strong> ${product.contact}</p>
-        <p><strong>Location:</strong> ${product.location}</p>
-        <img src="${product.imageurl}" alt="${product.name}" style="max-width: 300px; border-radius: 8px;">
-    `;
-
-    // Show the modal
-    document.getElementById('productModal').style.display = 'block';
-}
-
-
-</script>
-
-
-</body>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="main.js"></script>
+  </body>
 </html>
