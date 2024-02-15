@@ -83,7 +83,7 @@
         let currentImageUrl; // Variable to store the current image URL
     
         if (productId) {
-            fetch(`http://127.0.0.1:3000/api/products/${productId}`)
+            fetch(`https://farmhub-backend.onrender.com/api/products/${productId}`)
                 .then(response => response.json())
                 .then(product => {
                     form.name.value = product.name;
