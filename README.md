@@ -13,13 +13,13 @@ Welcome to **FarmHub Connect**, where we're sowing the seeds of innovation in ag
 
 ## About FarmHub Connect
 ### Landing Page
-<img src="src/Landing_page.jpg" alt="Landing Page" width="400">
+<img src="src/Landing page.jpg" alt="Landing Page" width="400">
 
 ### Sign Up Page
-<img src="src/Signup_page.jpg" alt="Sign Up Page" width="400">
+<img src="src/Signup page.jpg" alt="Sign Up Page" width="400">
 
 ### Login Page
-<img src="src/Login_page.jpg" alt="Login Page" width="400">
+<img src="src/Login page.jpg" alt="Login Page" width="400">
 
 
 
