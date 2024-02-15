@@ -13,13 +13,13 @@ Welcome to **FarmHub Connect**, where we're sowing the seeds of innovation in ag
 
 ## About FarmHub Connect
 ### Landing Page
-![Landing Page](src/Landing_page.jpg)
+![Landing Page](src/Landing_Page.jpg)
 
 ### Sign Up Page
-![Sign Up Page](src/Signup_page.jpg)
+![Sign Up Page](src/Signup_Page.jpg)
 
 ### Login Page
-![Login Page](src/Login_page.jpg)
+![Login Page](src/Login_Page.jpg)
 
 
 
