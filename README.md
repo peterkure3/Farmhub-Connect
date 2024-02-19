@@ -4,7 +4,8 @@ Welcome to **FarmHub-Connect**, where we're sowing the seeds of innovation in ag
 
 |      |      |
 |------|------|
-|      | <img src="src/Logo.jpg" alt="FarmHub-Connect" width="100"/>
+|      | <div style="text-align: center;"><img src="src/Logo.jpg" alt="FarmHub-Connect" width="200"/></div> |
+
 
 
 
