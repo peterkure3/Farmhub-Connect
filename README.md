@@ -2,9 +2,9 @@
 
 Welcome to **FarmHub-Connect**, where we're sowing the seeds of innovation in agriculture! 🌱🌐
 
-|  |  |
-|---|---|
-|  | ![FarmHub-Connect](src/Logo.jpg) |  |
+|      |      |
+|------|------|
+|      | <img src="src/Logo.jpg" alt="FarmHub-Connect" width="100"/>
 
 
 
