@@ -2,7 +2,7 @@
 
 Welcome to **FarmHub-Connect**, where we're sowing the seeds of innovation in agriculture! 🌱🌐
 
-<div style="text-align: center; margin: 0 auto; width: 100%;">
+<div style="display: flex; justify-content: center;">
     <img src="src/Logo.jpg" alt="FarmHub-Connect" width="200"/>
 </div>
 
