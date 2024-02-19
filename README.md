@@ -1,4 +1,4 @@
-![AWARE1](https://github.com/peterkure3/Farmhub-Connect/assets/101383274/96269736-7c85-4648-aa41-8c8f8617c18b) # FarmHub-Connect - Empowering Farmers 🌾🚜
+# FarmHub-Connect - Empowering Farmers 🌾🚜
 
 Welcome to **FarmHub-Connect**, where we're sowing the seeds of innovation in agriculture! 🌱🌐
 
