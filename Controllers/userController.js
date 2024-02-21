@@ -41,6 +41,17 @@ async function loginUser(req, res) {
     }
 }
 
+//Get all users
+async function getAllUsers (req, res) {
+    try {
+      const users = await userModels.getAllUsers();
+      res.json(users);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Error fetching users' });
+    }
+  }
+
 // forgot password
 async function forgotPassword(req, res) {
     const { email } = req.body;
@@ -81,6 +92,7 @@ async function updatePassword(req, res) {
 module.exports = {
     addUser,
     loginUser,
+    getAllUsers,
     forgotPassword,
     updatePassword,
 };

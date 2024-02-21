@@ -70,6 +70,16 @@ async function getUser(email) {
     return result.rows[0];
 }
 
+// Get all users
+async function getAllUsers() {
+    try {
+      const query = 'SELECT * FROM users';
+      const { rows } = await pool.query(query);
+      return rows;
+    } catch (error) {
+      throw error;
+    }
+  }
 // hash password
 async function hashPassword(password) {
     const saltRounds = 10;
@@ -121,6 +131,7 @@ async function updatePassword(email, password) {
 module.exports = {
     addUser,
     getUser,
+    getAllUsers,
     hashPassword,
     comparePassword,
     loginUser,
