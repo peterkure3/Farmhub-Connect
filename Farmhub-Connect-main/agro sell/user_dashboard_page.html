@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+        }
+        .navbar-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-left h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .add-item-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .add-item-btn:hover {
+            background-color: #45a049;
+        }
+
+
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .header {
+            background-color: #e2e2e2;
+            padding: 10px;
+            text-align: center;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .product-item {
+            background-color: #fff;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        #productList {
+            list-style-type: none; 
+            padding: 0;
+        }
+
+
+        .product-image {
+            max-width: 100px;
+            max-height: 100px;
+            margin-right: 10px;
+        }
+
+        .product-details {
+            display: flex;
+            align-items: center;
+        }
+
+        .product-info {
+            flex-grow: 1;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        .navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-btn {
+    margin-left: 10px; 
+}
+
+.logout-btn {
+    background-color: #f44336; 
+}
+
+.logout-btn:hover {
+    background-color: #c0392b; 
+}
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-left">
+            <h1>User Dashboard</h1>
+        </div>
+        <div class="navbar-right">
+            <button id="addProductBtn" class="navbar-btn add-item-btn">Add Product</button>
+            <button id="logoutBtn" class="navbar-btn logout-btn">Logout</button>
+        </div>
+    </div>
+    <div class="content">
+        <div class="header">
+            <h1>Your Products</h1>
+        </div>
+        <ul id="productList">
+            <!-- Products items will be populated here -->
+        </ul>
+    </div>
+    <script>
+        const productList = document.getElementById('productList');
+        const userId = localStorage.getItem('userid');
+
+        if (userId) {
+            fetch(`http://127.0.0.1:3000/api/products/user?userid=${userId}`)
+                .then(response => response.json())
+                .then(products => {
+                    products.forEach(product => {
+                        const li = document.createElement('li');
+                        li.className = 'product-item';
+
+                        const detailsDiv = document.createElement('div');
+                        detailsDiv.className = 'product-details';
+
+                        const img = document.createElement('img');
+                        img.src = product.imageurl;
+                        img.alt = product.name;
+                        img.className = 'product-image';
+
+                        const infoDiv = document.createElement('div');
+                        infoDiv.className = 'product-info';
+                        infoDiv.innerHTML = `
+                            <strong>Name:</strong> ${product.name}<br>
+                            <strong>Price:</strong> ${product.price}<br>
+                            <strong>Contact:</strong> ${product.contact}<br>
+                            <strong>Location:</strong> ${product.location}
+                        `;
+
+                        const editButton = document.createElement('button');
+                        editButton.textContent = 'Edit';
+                        editButton.onclick = function() {
+                            window.location.href = `/agro%20sell/edit_crop.html?productid=${product.id}`;
+                        };
+
+                        detailsDiv.appendChild(img);
+                        detailsDiv.appendChild(infoDiv);
+                        detailsDiv.appendChild(editButton);
+                        li.appendChild(detailsDiv);
+                        productList.appendChild(li);
+                    });
+                });
+        } else {
+            console.error('User ID not found. Please log in.');
+        }
+    </script>
+    <script>
+        document.getElementById('addProductBtn').addEventListener('click', function() {
+            window.location.href = 'sell_form.html';
+        });
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+           
+            localStorage.removeItem('userid');
+            window.location.href = 'user_dashboard_page.html';
+        });
+    </script>
+</body>
+</html>

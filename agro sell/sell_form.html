@@ -1,0 +1,196 @@
+<!-- sell_form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Your Agricultural Product</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #0e6904;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: #fff;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .sell-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #0e6904;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0e6904;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Sell Your Agricultural Product</h1>
+</header>
+
+<section>
+    <div class="sell-form">
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName" name="productName" required>
+
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="price" required>
+
+        <label for="contact">Contact:</label>
+        <input type="text" id="contact" name="contact" required>
+
+        <label for="productlocation">Location:</label>
+        <input type="text" id="productlocation" name="productlocation" required>
+
+        <label for="image">Upload Image:</label>
+        <input type="file" id="image" name="image" accept="image/*" >
+
+        <button onclick="submitForm()">Submit</button>
+    </div>
+</section>
+
+
+
+<script>
+    
+   
+
+    function uploadImage() {
+        return new Promise((resolve, reject) => {
+            const imageFile = document.getElementById('image').files[0];
+            if (!imageFile) {
+                resolve(null); 
+                return;
+            }
+
+            const imageFormData = new FormData();
+            imageFormData.append('file', imageFile);
+
+            fetch('http://localhost:3000/api/products/picture', { 
+                method: 'POST',
+                body: imageFormData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    resolve(data.data.imageUrl); 
+                } else {
+                    reject(data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                reject(error);
+            });
+        });
+    }
+
+    function submitForm() {
+        uploadImage().then(imageUrl => {
+            const productName = document.getElementById('productName').value;
+            const price = document.getElementById('price').value;
+            const contact = document.getElementById('contact').value;
+            const productlocation = document.getElementById('productlocation').value;
+
+            
+            
+            
+
+            const productData = {
+                name: productName,
+                price: price,
+                contact: contact,
+                location: productlocation,
+                imageUrl: imageUrl
+            };
+
+            fetch('http://127.0.0.1:3000/api/products', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(productData)
+            })
+            .then(response => response.json())  
+            .then(data => {
+                console.log(data);
+                if (data.success) {
+                    alert(data.message);  
+                    window.location.href = 'landing_page.html';
+                } else {
+                    alert('An error occurred: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Form Submitted To Farmhin-backend.onrender.com');
+            });
+        }).catch(error => {
+            alert('Form Submitted To Farmhin-backend.onrender.com: ' + error);
+        });
+    }
+</script>
+
+</body>
+</html>
