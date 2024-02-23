@@ -1,2 +1,11 @@
 node_modules
 .env
+DB_CONNECTION_STRING = "postgresql://muganga-charles:HyaYE3r0FUdb@ep-ancient-dream-42137160.us-east-2.aws.neon.tech/bfamdb?sslmode=require"
+API_KEY = "AIzaSyAVd4NfhqjA89oJhJJNpGk_OuKvcXkFiOI"
+AUTH_DOMAIN = "bfamproject-80d95.firebaseapp.com"
+PROJECT_ID = "bfamproject-80d95"
+STORAGE_BUCKET = "bfamproject-80d95.appspot.com"
+MESSAGING_SENDER_ID = "355450640113"
+APP_ID = "1:355450640113:web:e9df028126f1f2d235bb50"
+MEASUREMENT_ID = "G-03S2JMCRH3"
+NODE_ENV = "production"
