@@ -57,7 +57,7 @@
           </div>
         </form>
 
-        <form id="signUpForm" autocomplete="off" class="sign-up-form">
+        <form id="signupForm" autocomplete="off" class="sign-up-form">
           <div class="logo">
             <a href="#"><img src="assets/logo2.png" alt="logo" /></a>
             <h4>FARMHUB CONNECT</h4>
@@ -73,30 +73,41 @@
             <div class="input-wrap">
               <input
                 type="text"
-                id="signUpName"
+                id="username"
                 minlength="4"
                 class="input-field"
                 autocomplete="off"
                 required
               />
-              <label>Name</label>
+              <label>User Name</label>
             </div>
 
             <div class="input-wrap">
               <input
                 type="email"
-                id="signUpEmail"
+                id="email"
                 class="input-field"
                 autocomplete="off"
                 required
               />
               <label>Email</label>
             </div>
+            <div class="input-wrap">
+              <input
+                type="text"
+                id="business"
+                minlength="4"
+                class="input-field"
+                autocomplete="off"
+                required
+              />
+              <label>Farm</label>
+            </div>
 
             <div class="input-wrap">
               <input
                 type="password"
-                id="signUpPassword"
+                id="password"
                 minlength="4"
                 class="input-field"
                 autocomplete="off"
@@ -174,24 +185,29 @@
     });
   });
 
-  document.getElementById('signUpForm').addEventListener('submit', function(event) {
+  document.getElementById('signupForm').addEventListener('submit', function(event) {
     event.preventDefault();
-    const name = document.getElementById('signUpName').value;
-    const email = document.getElementById('signUpEmail').value;
-    const password = document.getElementById('signUpPassword').value;
+    const name = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const business = document.getElementById('business').value;
+    const password = document.getElementById('password').value;
+    
+
 
     // Perform sign up form submission with fetch
-    fetch('http://127.0.0.1:3000/users/signup', {
+    fetch('http://127.0.0.1:3000/users/users', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, email, password })
+        body: JSON.stringify({ name, email, password, business })
     })
     .then(response => response.json())
     .then(data => {
+        console.log(data);
         if (data.success) {
             alert('Sign up successful! Please log in.');
+            window.location.href = 'sell_form.html';
         } else {
             alert('Sign up failed: ' + data.message);
         }
