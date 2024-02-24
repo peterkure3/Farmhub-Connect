@@ -623,7 +623,7 @@ nav {
 
 #searchButton {
   padding: 12px 20px;
-  background-color: #007bff;
+  background-color: #0e6904;
   color: white;
   border: none;
   border-radius: 8px;
@@ -632,7 +632,7 @@ nav {
 }
 
 #searchButton:hover {
-  background-color: #0056b3;
+  background-color: #0e6904;
 }
 
 /* Responsive styles */
