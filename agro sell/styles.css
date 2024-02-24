@@ -604,52 +604,57 @@ nav {
     gap: 2rem;
   }
 }
-/* General styles */
+/* Your existing CSS styles */
+
+/* Search bar styles */
 .search-bar {
   display: flex;
   align-items: center;
-  max-width: 600px;
-  margin: 0 auto;
 }
 
-#searchInput {
-  flex: 1;
-  padding: 12px;
+.search-bar input[type="text"] {
+  padding: 10px;
   font-size: 16px;
-  border: 2px solid #ccc;
-  border-radius: 8px;
+  border: 2px solid grey;
+  border-radius: 5px;
   outline: none;
 }
 
-#searchButton {
-  padding: 12px 20px;
-  background-color: #0e6904;
+.search-bar button {
+  padding: 10px 20px;
+  background: #0e6904;
   color: white;
-  border: none;
-  border-radius: 8px;
+  font-size: 16px;
+  border: 1px solid grey;
+  border-left: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-#searchButton:hover {
-  background-color: #0e6904;
+.search-bar button:hover {
+  background: #0e6904;
 }
 
-/* Responsive styles */
+/* Responsive styles for the search bar */
 @media only screen and (max-width: 768px) {
   .search-bar {
     flex-direction: column;
     align-items: stretch;
   }
 
-  #searchInput {
+  .search-bar input[type="text"] {
     margin-bottom: 10px;
   }
 }
 
 @media only screen and (max-width: 576px) {
-  #searchButton {
-    padding: 10px 16px;
+  .search-bar button {
+    padding: 8px 16px;
     font-size: 14px;
   }
 }
+
+/* End of search bar styles */
+
+/* Your other CSS styles */
