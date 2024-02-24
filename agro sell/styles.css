@@ -94,7 +94,7 @@ body {
 }
 
 .header {
-  background-image: url("assets/header.jpg");
+  background-image: url("assets/header2.jpg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -283,11 +283,11 @@ nav {
 }
 
 .room__card__icons span:nth-child(1) {
-  color: #f472b6;
+  color: #0e6904;
 }
 
 .room__card__icons span:nth-child(2) {
-  color: #c084fc;
+  color: #0e6904;
 }
 
 .room__card__icons span:nth-child(3) {
@@ -372,17 +372,17 @@ nav {
 }
 
 .service__list li:nth-child(2) span {
-  color: #f472b6;
+  color: #0e6904;
   background-color: #fce7f3;
 }
 
 .service__list li:nth-child(3) span {
-  color: #c084fc;
+  color: #0e6904;
   background-color: #f3e8ff;
 }
 
 .service__list li:nth-child(4) span {
-  color: #fb7185;
+  color: #0e6904;
   background-color: #ffe4e6;
 }
 
