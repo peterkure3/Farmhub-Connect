@@ -21,6 +21,7 @@
   padding: 5rem 1rem;
 }
 
+
 .section__subheader {
   margin-bottom: 0.5rem;
   position: relative;
@@ -603,3 +604,33 @@ nav {
     gap: 2rem;
   }
 }
+.search-bar {
+  display: flex;
+  align-items: center;
+  max-width: 600px; /* Adjust as needed */
+  margin: 0 auto;
+}
+
+#searchInput {
+  flex: 1; /* Take remaining space */
+  padding: 12px; /* Adjust padding */
+  font-size: 16px; /* Adjust font size */
+  border: 2px solid #ccc; /* Add border */
+  border-radius: 8px; /* Add border radius */
+  outline: none; /* Remove outline */
+}
+
+#searchButton {
+  padding: 8px 15px; /* Adjust padding */
+  background-color: #0e6904; /* Set background color */
+  color: white; /* Set text color */
+  border: none; /* Remove border */
+  border-radius: 8px; /* Add border radius */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add transition */
+}
+
+#searchButton:hover {
+  background-color: #0e6904; /* Change background color on hover */
+}
+
