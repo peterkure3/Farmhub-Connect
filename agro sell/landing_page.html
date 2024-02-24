@@ -30,13 +30,16 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="search-bar">
-          <input type="text" id="searchInput" placeholder="Search for products..." style="padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
+        
 
-          <button class="btn nav__btn" onclick="searchProducts()" style="margin-left: 8px; padding: 8px 16px; border-radius: 4px; background-color: #007bff; color: white; border: none; cursor: pointer;">Search</button>
-
-          <a href="login.html" class="sell-button">Sell</a> 
+          
         </div>
-        <button class="btn nav__btn">Search</button>
+        
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="Search for products...">
+          <button class="btn" id="searchButton">Search</button>
+        </div>
+      
       
 
 
@@ -229,7 +232,7 @@ Join us in revolutionizing the way farmers grow, sell, and thrive! 🌟 Let's so
   
       document.getElementById('searchInput').addEventListener('input', searchProducts);
   
-      function searchProducts() {
+       function searchProducts() {
           const searchText = document.getElementById('searchInput').value;
           if (searchText.trim() !== '') {
               fetch(`http://127.0.0.1:3000/api/products/filter/${encodeURIComponent(searchText)}`)
@@ -242,7 +245,7 @@ Join us in revolutionizing the way farmers grow, sell, and thrive! 🌟 Let's so
                   });
           } else {
               fetchProducts(); 
-          }
+        }
       }
       
   
@@ -282,9 +285,9 @@ Join us in revolutionizing the way farmers grow, sell, and thrive! 🌟 Let's so
           const happyCustomers = document.querySelector('.banner__card:nth-child(3) h4');
   
           
-          const updatedFarmersCount = 15; 
-          const updatedDealsCount = 5;
-          const updatedCustomersCount = 8;
+          const updatedFarmersCount = 100; 
+          const updatedDealsCount = 50;
+          const updatedCustomersCount = 200;
   
           farmersAvailable.textContent = updatedFarmersCount;
           dealsMade.textContent = updatedDealsCount;
