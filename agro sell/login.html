@@ -14,8 +14,8 @@
       <div class="forms-wrap">
         <form id="signInForm" autocomplete="off" class="sign-in-form">
           <div class="logo">
-            <a href="#"><img src="assets/logo2.png" alt="logo" /></a>
-            <h4>FARMHUB CONNECT</h4>
+            <a href="./landing_page.html"><img src="assets/logo2.png" alt="logo" /></a>
+            <a href= "./landing_page.html"><h4>FARMHUB CONNECT</h4></a>
           </div>
 
           <div class="heading">
@@ -59,8 +59,8 @@
 
         <form id="signupForm" autocomplete="off" class="sign-up-form">
           <div class="logo">
-            <a href="#"><img src="assets/logo2.png" alt="logo" /></a>
-            <h4>FARMHUB CONNECT</h4>
+            <a href="./landing_page.html"><img src="assets/logo2.png" alt="logo" /></a>
+            <a href= "./landing_page.html"><h4>FARMHUB CONNECT</h4></a>
           </div>
 
           <div class="heading">
@@ -173,6 +173,8 @@
     .then(response => response.json())
     .then(data => {
         if (data.success) {
+          const userid=data.data.id;
+          localStorage.setItem('userid',userid);
             alert('Login successful!');
             window.location.href = 'user_dashboard_page.html';
         } else {
@@ -206,6 +208,9 @@
     .then(data => {
         console.log(data);
         if (data.success) {
+          //const userid=data.data.id;
+          //localStorage.setItem('userid',userid);
+          //console.log(response.data)
             alert('Sign up successful! Please log in.');
             window.location.href = 'sell_form.html';
         } else {
