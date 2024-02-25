@@ -20,6 +20,38 @@
             text-align: center;
             padding: 10px 0;
         }
+         .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #0e6904;
+            color: white;
+            padding: 10px 20px;
+        }
+        .navbar-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-left h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .navbar-left img {
+            max-width: 110px;
+        }
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+       
 
         section {
             max-width: 800px;
@@ -86,7 +118,12 @@
 <body>
 
 <header>
-    <h1>Sell Your Agricultural Product</h1>
+    <div class="navbar">
+        <div class="navbar-left">
+             <a href="./landing_page.html"><img src="assets/logo2.png" alt="logo" /></a>
+
+            <a href = "./landing_page.html"><h1>Farm Dashboard</h1></a>
+    </div>
 </header>
 
 <section>
@@ -152,6 +189,7 @@
             const price = document.getElementById('price').value;
             const contact = document.getElementById('contact').value;
             const productlocation = document.getElementById('productlocation').value;
+            const userId = localStorage.getItem('userid');
 
             
             
@@ -162,7 +200,8 @@
                 price: price,
                 contact: contact,
                 location: productlocation,
-                imageUrl: imageUrl
+                imageUrl: imageUrl,
+                userid: userId,
             };
 
             fetch('http://127.0.0.1:3000/api/products', {
@@ -177,7 +216,7 @@
                 console.log(data);
                 if (data.success) {
                     alert(data.message);  
-                    window.location.href = 'landing_page.html';
+                    window.location.href = 'user_dashboard_page.html';
                 } else {
                     alert('An error occurred: ' + data.message);
                 }
