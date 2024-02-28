@@ -283,11 +283,11 @@ nav {
 }
 
 .room__card__icons span:nth-child(1) {
-  color: #0e6904;
+  color: #f472b6;
 }
 
 .room__card__icons span:nth-child(2) {
-  color: #0e6904;
+  color: #c084fc;
 }
 
 .room__card__icons span:nth-child(3) {
@@ -372,17 +372,17 @@ nav {
 }
 
 .service__list li:nth-child(2) span {
-  color: #0e6904;
+  color: #f472b6;;
   background-color: #fce7f3;
 }
 
 .service__list li:nth-child(3) span {
-  color: #0e6904;
+  color: #c084fc;
   background-color: #f3e8ff;
 }
 
 .service__list li:nth-child(4) span {
-  color: #0e6904;
+  color: #fb7185;
   background-color: #ffe4e6;
 }
 
