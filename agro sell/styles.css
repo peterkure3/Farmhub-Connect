@@ -21,7 +21,6 @@
   padding: 5rem 1rem;
 }
 
-
 .section__subheader {
   margin-bottom: 0.5rem;
   position: relative;
@@ -284,11 +283,11 @@ nav {
 }
 
 .room__card__icons span:nth-child(1) {
-  color: #0e6904;
+  color: #f472b6;
 }
 
 .room__card__icons span:nth-child(2) {
-  color: #0e6904;
+  color: #c084fc;
 }
 
 .room__card__icons span:nth-child(3) {
@@ -373,17 +372,17 @@ nav {
 }
 
 .service__list li:nth-child(2) span {
-  color: #0e6904;
+  color: #f472b6;;
   background-color: #fce7f3;
 }
 
 .service__list li:nth-child(3) span {
-  color: #0e6904;
+  color: #c084fc;
   background-color: #f3e8ff;
 }
 
 .service__list li:nth-child(4) span {
-  color: #0e6904;
+  color: #fb7185;
   background-color: #ffe4e6;
 }
 
@@ -604,57 +603,3 @@ nav {
     gap: 2rem;
   }
 }
-/* Your existing CSS styles */
-
-/* Search bar styles */
-.search-bar {
-  display: flex;
-  align-items: center;
-}
-
-.search-bar input[type="text"] {
-  padding: 10px;
-  font-size: 16px;
-  border: 2px solid grey;
-  border-radius: 5px;
-  outline: none;
-}
-
-.search-bar button {
-  padding: 10px 20px;
-  background: #0e6904;
-  color: white;
-  font-size: 16px;
-  border: 1px solid grey;
-  border-left: none;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  cursor: pointer;
-}
-
-.search-bar button:hover {
-  background: #0e6904;
-}
-
-/* Responsive styles for the search bar */
-@media only screen and (max-width: 768px) {
-  .search-bar {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .search-bar input[type="text"] {
-    margin-bottom: 10px;
-  }
-}
-
-@media only screen and (max-width: 576px) {
-  .search-bar button {
-    padding: 8px 16px;
-    font-size: 14px;
-  }
-}
-
-/* End of search bar styles */
-
-/* Your other CSS styles */
