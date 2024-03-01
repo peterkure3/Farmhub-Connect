@@ -151,13 +151,15 @@
             const price = document.getElementById('price').value;
             const contact = document.getElementById('contact').value;
             const location = document.getElementById('location').value;
-
+            const userId = localStorage.getItem('userid');
+            
             const productData = {
                 name: productName,
                 price: price,
                 contact: contact,
                 location: location,
-                imageUrl: imageUrl
+                imageUrl: imageUrl,
+                userid: userId,
             };
 
             fetch('https://farmhub-backend.onrender.com/api/products', {
