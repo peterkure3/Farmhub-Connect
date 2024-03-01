@@ -1,115 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign in & Sign up Form</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <main>
-      <div class="box">
-        <div class="inner-box">
-          <div class="forms-wrap">
-            <form action="https://farmhub-backend.onrender.com/users/login" method="POST" autocomplete="off" class="sign-in-form">
-              <div class="logo">
-                <h4>FARMHUB-CONNECT</h4>
-              </div>
-
-              <div class="heading">
-                <h2>Welcome Back</h2>
-                <h6>Not registered yet?</h6>
-                <a href="#" class="toggle">Sign up</a>
-              </div>
-
-              <div class="actual-form">
-                <div class="input-wrap">
-                  <input type="text" name="username" minlength="4" class="input-field" autocomplete="off" required />
-                  <label>Name</label>
-                </div>
-
-                <div class="input-wrap">
-                  <input type="password" name="password" minlength="4" class="input-field" autocomplete="off" required />
-                  <label>Password</label>
-                </div>
-
-                <input type="submit" value="Sign In" class="sign-btn" />
-
-                <p class="text">
-                  Forgotten your password or your login details?
-                  <a href="#">Get help</a> signing in
-                </p>
-              </div>
-            </form>
-
-            <form action="https://farmhub-backend.onrender.com/users/signup" method="POST" autocomplete="off" class="sign-up-form">
-              <div class="logo">
-                <h4>FARMHUB-CONNECT</h4>
-              </div>
-
-              <div class="heading">
-                <h2>Get Started</h2>
-                <h6>Already have an account?</h6>
-                <a href="#" class="toggle">Sign in</a>
-              </div>
-
-              <div class="actual-form">
-                <div class="input-wrap">
-                  <input type="text" name="username" minlength="4" class="input-field" autocomplete="off" required />
-                  <label>Name</label>
-                </div>
-
-                <div class="input-wrap">
-                  <input type="email" name="email" class="input-field" autocomplete="off" required />
-                  <label>Email</label>
-                </div>
-
-                <div class="input-wrap">
-                  <input type="password" name="password" minlength="4" class="input-field" autocomplete="off" required />
-                  <label>Password</label>
-                </div>
-
-                <input type="submit" value="Sign Up" class="sign-btn" />
-
-                <p class="text">
-                  By signing up, I agree to the
-                  <a href="#">Terms of Services</a> and
-                  <a href="#">Privacy Policy</a>
-                </p>
-              </div>
-            </form>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign in & Sign up Form</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<main>
+  <div class="box">
+    <div class="inner-box">
+      <div class="forms-wrap">
+        <form id="signInForm" autocomplete="off" class="sign-in-form">
+          <div class="logo">
+            <a href="./landing_page.html"><img src="assets/logo2.png" alt="logo" /></a>
+            <a href= "./landing_page.html"><h4>FARMHUB CONNECT</h4></a>
           </div>
 
-          <div class="carousel">
-            <div class="images-wrapper">
-              <img src="./img/hero7.jpg" class="image img-1 show" alt="" />
-              <img src="./img/serive.jpg" class="image img-2" alt="" />
-              <img src="./img/services.jpg" class="image img-3" alt="" />
+          <div class="heading">
+            <h2>Welcome Back</h2>
+            <h6>Not registered yet?</h6>
+            <a href="#" class="toggle">Sign up</a>
+          </div>
+
+          <div class="actual-form">
+            <div class="input-wrap">
+              <input
+                type="email" 
+                id="signInEmail"
+                class="input-field"
+                autocomplete="off"
+                required
+              />
+              <label>Email</label>
             </div>
 
-            <div class="text-slider">
-              <div class="text-wrap">
-                <div class="text-group">
-                  <h2>Sell Your Products Through Us</h2>
-                  <h2>Customize as you like</h2>
-                  <h2>Invite Other Farmers</h2>
-                </div>
-              </div>
-
-              <div class="bullets">
-                <span class="active" data-value="1"></span>
-                <span data-value="2"></span>
-                <span data-value="3"></span>
-              </div>
+            <div class="input-wrap">
+              <input
+                type="password"
+                id="signInPassword"
+                minlength="4"
+                class="input-field"
+                autocomplete="off"
+                required
+              />
+              <label>Password</label>
             </div>
+
+            <input type="submit" value="Sign In" class="sign-btn" />
+
+            <p class="text">
+              Forgotten your password or your login details?
+              <a href="#">Get help</a> signing in
+            </p>
+          </div>
+        </form>
+
+        <form id="signupForm" autocomplete="off" class="sign-up-form">
+          <div class="logo">
+            <a href="./landing_page.html"><img src="assets/logo2.png" alt="logo" /></a>
+            <a href= "./landing_page.html"><h4>FARMHUB CONNECT</h4></a>
+          </div>
+
+          <div class="heading">
+            <h2>Get Started</h2>
+            <h6>Already have an account?</h6>
+            <a href="#" class="toggle">Sign in</a>
+          </div>
+
+          <div class="actual-form">
+            <div class="input-wrap">
+              <input
+                type="text"
+                id="username"
+                minlength="4"
+                class="input-field"
+                autocomplete="off"
+                required
+              />
+              <label>User Name</label>
+            </div>
+
+            <div class="input-wrap">
+              <input
+                type="email"
+                id="email"
+                class="input-field"
+                autocomplete="off"
+                required
+              />
+              <label>Email</label>
+            </div>
+            <div class="input-wrap">
+              <input
+                type="text"
+                id="business"
+                minlength="4"
+                class="input-field"
+                autocomplete="off"
+                required
+              />
+              <label>Farm</label>
+            </div>
+
+            <div class="input-wrap">
+              <input
+                type="password"
+                id="password"
+                minlength="4"
+                class="input-field"
+                autocomplete="off"
+                required
+              />
+              <label>Password</label>
+            </div>
+
+            <input type="submit" value="Sign Up" class="sign-btn" />
+
+            <p class="text">
+              By signing up, I agree to the
+              <a href="#">Terms of Services</a> and
+              <a href="#">Privacy Policy</a>
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <div class="carousel">
+        <div class="images-wrapper">
+          <img src="./img/hero7.jpg" class="image img-1 show" alt="" />
+          <img src="./img/serive.jpg" class="image img-2" alt="" />
+          <img src="./img/services.jpg" class="image img-3" alt="" />
+        </div>
+
+        <div class="text-slider">
+          <div class="text-wrap">
+            <div class="text-group">
+              <h2>Sell Your Products Through Us</h2>
+              <h2>Customize as you like</h2>
+              <h2>Invite Other Farmers</h2>
+            </div>
+          </div>
+
+          <div class="bullets">
+            <span class="active" data-value="1"></span>
+            <span data-value="2"></span>
+            <span data-value="3"></span>
           </div>
         </div>
       </div>
-    </main>
+    </div>
+  </div>
+</main>
 
-    <!-- Javascript file -->
+<script src="login.js"></script>
 
-    <script src="app.js"></script>
-  </body>
+<script>
+  document.getElementById('signInForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const email = document.getElementById('signInEmail').value;
+    const password = document.getElementById('signInPassword').value;
+
+    // Perform login form submission with fetch
+    fetch('https://farmhub-backend.onrender.com/users/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+          const userid=data.data.id;
+          localStorage.setItem('userid',userid);
+            alert('Login successful!');
+            window.location.href = '../user_dashboard_page.html';
+        } else {
+            alert('Login failed: ' + data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred while logging in.');
+    });
+  });
+
+  document.getElementById('signupForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const name = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const business = document.getElementById('business').value;
+    const password = document.getElementById('password').value;
+    
+
+
+    // Perform sign up form submission with fetch
+    fetch('https://farmhub-backend.onrender.com/users/users', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, password, business })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        if (data.success) {
+          //const userid=data.data.id;
+          //localStorage.setItem('userid',userid);
+          //console.log(response.data)
+            alert('Sign up successful! Please log in.');
+            window.location.href = 'sell_form.html';
+        } else {
+            alert('Sign up failed: ' + data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred while signing up.');
+    });
+  });
+</script>
+
+
+</body>
 </html>
