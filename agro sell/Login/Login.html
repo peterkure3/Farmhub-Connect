@@ -197,7 +197,7 @@
 
 
     // Perform sign up form submission with fetch
-    fetch('https://farmhub-backend.onrender.com/users/users', {
+    fetch('https://farmhub-backend.onrender.com/users/register', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -212,7 +212,7 @@
           //localStorage.setItem('userid',userid);
           //console.log(response.data)
             alert('Sign up successful! Please log in.');
-            window.location.href = 'sell_form.html';
+            window.location.href = '../sell_form.html';
         } else {
             alert('Sign up failed: ' + data.message);
         }
