@@ -218,7 +218,7 @@
       };
   
       function fetchProducts() {
-          fetch('http://127.0.0.1:3000/api/products') 
+          fetch('http://localhost:3000/api/products') 
               .then(response => response.json())
               .then(products => {
                   console.log('Products:', products); 
@@ -234,7 +234,7 @@
        function searchProducts() {
           const searchText = document.getElementById('searchInput').value;
           if (searchText.trim() !== '') {
-              fetch(`http://127.0.0.1:3000/api/products/filter/${encodeURIComponent(searchText)}`)
+              fetch(`http://localhost:3000/api/products/filter/${encodeURIComponent(searchText)}`)
                   .then(response => response.json())
                   .then(products => {
                       renderProducts(products);
