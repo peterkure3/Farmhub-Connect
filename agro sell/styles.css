@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 :root {
-  --primary-color: #118405;
-  --primary-color-dark: #07800d;
+  --primary-color: #0e6904;
+  --primary-color-dark: #05760b;
   --text-dark: #0c0a09;
   --text-light: #78716c;
   --white: #ffffff;
@@ -81,7 +81,7 @@ a {
 }
 
 .logo {
-  max-width: 120px;
+  max-width: 110px;
 }
 
 html,
@@ -94,7 +94,7 @@ body {
 }
 
 .header {
-  background-image: url("assets/header.jpg");
+  background-image: url("assets/header2.jpg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -134,7 +134,7 @@ nav {
   align-items: center;
   flex-direction: column;
   gap: 2rem;
-  background-color: rgba(188, 28, 92, 0.9);
+  background-color: #0e6904;
   transform: translateY(-100%);
   transition: 0.5s;
   z-index: -1;
@@ -372,7 +372,7 @@ nav {
 }
 
 .service__list li:nth-child(2) span {
-  color: #f472b6;
+  color: #f472b6;;
   background-color: #fce7f3;
 }
 

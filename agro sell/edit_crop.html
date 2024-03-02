@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Edit Product</title>
     <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -42,7 +43,7 @@
         }
 
         button {
-            background-color: #4CAF50;
+            background-color: #0e6904;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -53,7 +54,7 @@
         }
 
         button:hover {
-            background-color: #45a049;
+            background-color: #0e6904;
         }
         .form-container {
             text-align: center;
@@ -83,7 +84,7 @@
         let currentImageUrl; // Variable to store the current image URL
     
         if (productId) {
-            fetch(`https://farmhub-backend.onrender.com/api/products/${productId}`)
+            fetch(`http://127.0.0.1:3000/api/products/${productId}`)
                 .then(response => response.json())
                 .then(product => {
                     form.name.value = product.name;
@@ -107,7 +108,7 @@
                 imageUrl: currentImageUrl, 
                 productid: productId
             };
-            fetch(`https://farmhub-backend.onrender.com/api/products/update`, {
+            fetch(`http://127.0.0.1:3000/api/products/update`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

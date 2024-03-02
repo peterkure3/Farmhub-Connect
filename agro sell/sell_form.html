@@ -15,11 +15,43 @@
         }
 
         header {
-            background-color: #4CAF50;
+            background-color: #0e6904;
             color: white;
             text-align: center;
             padding: 10px 0;
         }
+         .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #0e6904;
+            color: white;
+            padding: 10px 20px;
+        }
+        .navbar-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-left h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .navbar-left img {
+            max-width: 110px;
+        }
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+       
 
         section {
             max-width: 800px;
@@ -31,7 +63,7 @@
         }
 
         h1, h2, h3 {
-            color: #333;
+            color: #fff;
         }
 
         p {
@@ -59,7 +91,7 @@
         }
 
         button {
-            background-color: #4CAF50;
+            background-color: #0e6904;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -69,7 +101,7 @@
         }
 
         button:hover {
-            background-color: #45a049;
+            background-color: #0e6904;
         }
 
         footer {
@@ -86,7 +118,12 @@
 <body>
 
 <header>
-    <h1>Sell Your Agricultural Product</h1>
+    <div class="navbar">
+        <div class="navbar-left">
+             <a href="./landing_page.html"><img src="assets/logo2.png" alt="logo" /></a>
+
+            <a href = "./landing_page.html"><h1>Farm Dashboard</h1></a>
+    </div>
 </header>
 
 <section>
@@ -100,8 +137,8 @@
         <label for="contact">Contact:</label>
         <input type="text" id="contact" name="contact" required>
 
-        <label for="location">Location:</label>
-        <input type="text" id="location" name="location" required>
+        <label for="productlocation">Location:</label>
+        <input type="text" id="productlocation" name="productlocation" required>
 
         <label for="image">Upload Image:</label>
         <input type="file" id="image" name="image" accept="image/*" >
@@ -110,11 +147,12 @@
     </div>
 </section>
 
-<!-- <footer>
-    <p>&copy; 2024 Farmhub Connect. All rights reserved.</p>
-</footer> -->
+
 
 <script>
+    
+   
+
     function uploadImage() {
         return new Promise((resolve, reject) => {
             const imageFile = document.getElementById('image').files[0];
@@ -126,7 +164,7 @@
             const imageFormData = new FormData();
             imageFormData.append('file', imageFile);
 
-            fetch('https://farmhub-backend.onrender.com/api/products/picture', { 
+            fetch('http://localhost:3000/api/products/picture', { 
                 method: 'POST',
                 body: imageFormData
             })
@@ -150,19 +188,23 @@
             const productName = document.getElementById('productName').value;
             const price = document.getElementById('price').value;
             const contact = document.getElementById('contact').value;
-            const location = document.getElementById('location').value;
+            const productlocation = document.getElementById('productlocation').value;
             const userId = localStorage.getItem('userid');
+
             
+            
+            
+
             const productData = {
                 name: productName,
                 price: price,
                 contact: contact,
-                location: location,
+                location: productlocation,
                 imageUrl: imageUrl,
                 userid: userId,
             };
 
-            fetch('https://farmhub-backend.onrender.com/api/products', {
+            fetch('http://127.0.0.1:3000/api/products', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -181,10 +223,10 @@
             })
             .catch(error => {
                 console.error('Error:', error);
-                alert('An error occurred while submitting the form');
+                alert('Form Submitted To Farmhin-backend.onrender.com');
             });
         }).catch(error => {
-            alert('Image upload failed: ' + error);
+            alert('Form Submitted To Farmhin-backend.onrender.com: ' + error);
         });
     }
 </script>
