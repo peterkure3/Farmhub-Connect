@@ -232,7 +232,7 @@ Farmhub Connect facilitates a dual-login system for customers and farmers. 🌱 
       };
   
       function fetchProducts() {
-          fetch('http://127.0.0.1:3000/api/products') 
+          fetch('https://farmhub-backend.onrender.com/api/products') 
               .then(response => response.json())
               .then(products => {
                   console.log('Products:', products); 
@@ -248,7 +248,7 @@ Farmhub Connect facilitates a dual-login system for customers and farmers. 🌱 
        function searchProducts() {
           const searchText = document.getElementById('searchInput').value;
           if (searchText.trim() !== '') {
-              fetch(`http://127.0.0.1:3000/api/products/filter/${encodeURIComponent(searchText)}`)
+              fetch(`https://farmhub-backend.onrender.com/api/products/filter/${encodeURIComponent(searchText)}`)
                   .then(response => response.json())
                   .then(products => {
                       renderProducts(products);

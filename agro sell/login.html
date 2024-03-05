@@ -163,7 +163,7 @@
     const password = document.getElementById('signInPassword').value;
 
     // Perform login form submission with fetch
-    fetch('http://127.0.0.1:3000/users/login', {
+    fetch('https://farmhub-backend.onrender.com/users/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -197,7 +197,7 @@
 
 
     // Perform sign up form submission with fetch
-    fetch('http://127.0.0.1:3000/users/users', {
+    fetch('https://farmhub-backend.onrender.com/users/users', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
