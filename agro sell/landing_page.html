@@ -78,6 +78,18 @@
         <div class="input__group input__btn">
           <a href="./login.html"button class="btn">Login</button></a>
         </div>
+        <div class="about__image">
+          <img src="assets/know.jpg" alt="about" />
+        </div>
+        <div class="about__content">
+          <p class="section__subheader">WELCOME</p>
+          <h2 class="section__header">HOW IT WORKS</h2>
+          <p class="section__description">
+            
+Farmhub Connect facilitates a dual-login system for customers and farmers. 🌱 Farmers sign up to upload their product listings, while customers sign up to view these listings. 🛒 Once logged in, customers can browse the farmers' products and access their contact information for further interaction. 📲
+          </p>
+          
+        </div>
       </form>
     </section>
 
@@ -153,6 +165,7 @@
         <div class="banner__card">
           <h4>0+</h4>
           <p>Happy Customers</p>
+          
         </div>
       </div>
     </section>
@@ -210,9 +223,10 @@
           </div>
         </div>
       </div>
-     
+      
     </footer>
-    <script>
+    
+    <script >
       window.onload = function() {
           fetchProducts();
       };
@@ -269,8 +283,8 @@
                   <div class="room__card__details">
                       <h4>${product.name}</h4>
                       <h3>Available</h3>
-                      <h5>Price:<span>${product.price}</span></h5>
-                      <h5>Location:<span>${product.location}</span></h5>
+                      <h5>Starting from <span>${product.price}</span></h5>
+                      <h5>Location: <span>${product.location}</span></h5>
                       <a href="./cuslogin.html"><button class="btn">Sign Up</button></a>
                   </div>
               `;
@@ -284,29 +298,31 @@
           const happyCustomers = document.querySelector('.banner__card:nth-child(3) h4');
   
           
-          const updatedFarmersCount = 100; 
-          const updatedDealsCount = 50;
-          const updatedCustomersCount = 200;
+          const updatedFarmersCount = 15; 
+          const updatedDealsCount = 5;
+          const updatedCustomersCount = 20;
   
           farmersAvailable.textContent = updatedFarmersCount;
           dealsMade.textContent = updatedDealsCount;
           happyCustomers.textContent = updatedCustomersCount;
         function formatPrice(price) {
-    // Add "shs." at the beginning of the price
+    
           let formattedPrice = "shs. " + price;
 
-    // Add commas to the price for better readability
+    
           formattedPrice = formattedPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
            return formattedPrice;
           }
       }
   </script>
+  <iframe	style="width: 400px; height: 600px;" src="https://app.fastbots.ai/embed/clsyk0kxi010bs9b3age7yrid"></iframe>
   
 
     <script src="https://unpkg.com/scrollreveal"></script>
-   
-
+    
     <script src="main.js"></script>
+    
+    
   </body>
 </html>
