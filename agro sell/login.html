@@ -15,7 +15,7 @@
         <form id="signInForm" autocomplete="off" class="sign-in-form">
           <div class="logo">
             <a href="./landing_page.html"><img src="assets/logo2.png" alt="logo" /></a>
-            <a href= "./landing_page.html"><h4>FARMHUB CONNECT</h4></a>
+            <h4>FARMHUB CONNECT</h4>
           </div>
 
           <div class="heading">
@@ -60,7 +60,7 @@
         <form id="signupForm" autocomplete="off" class="sign-up-form">
           <div class="logo">
             <a href="./landing_page.html"><img src="assets/logo2.png" alt="logo" /></a>
-            <a href= "./landing_page.html"><h4>FARMHUB CONNECT</h4></a>
+            <h4>FARMHUB CONNECT</h4></a>
           </div>
 
           <div class="heading">
@@ -79,7 +79,7 @@
                 autocomplete="off"
                 required
               />
-              <label>User Name</label>
+              <label>UserName</label>
             </div>
 
             <div class="input-wrap">
@@ -101,7 +101,7 @@
                 autocomplete="off"
                 required
               />
-              <label>Farm</label>
+              <label>FarmName & location</label>
             </div>
 
             <div class="input-wrap">
@@ -118,11 +118,7 @@
 
             <input type="submit" value="Sign Up" class="sign-btn" />
 
-            <p class="text">
-              By signing up, I agree to the
-              <a href="#">Terms of Services</a> and
-              <a href="#">Privacy Policy</a>
-            </p>
+            
           </div>
         </form>
       </div>
@@ -137,8 +133,8 @@
         <div class="text-slider">
           <div class="text-wrap">
             <div class="text-group">
-              <h2>Sell Your Products Through Us</h2>
-              <h2>Customize as you like</h2>
+              <h2>Market Your Products Through Us</h2>
+              <h2>Customize Your Products</h2>
               <h2>Invite Other Farmers</h2>
             </div>
           </div>
@@ -208,9 +204,7 @@
     .then(data => {
         console.log(data);
         if (data.success) {
-          //const userid=data.data.id;
-          //localStorage.setItem('userid',userid);
-          //console.log(response.data)
+          
             alert('Sign up successful! Please log in.');
             window.location.href = 'sell_form.html';
         } else {
