@@ -158,7 +158,7 @@
         const userId = localStorage.getItem('userid');
 
         if (userId) {
-            fetch(`https://farmhub-backend.onrender.com/api/products/user?userid=${userId}`)
+            fetch(`http://127.0.0.1:3000/api/products/user?userid=${userId}`)
                 .then(response => response.json())
                 .then(products => {
                     products.forEach(product => {

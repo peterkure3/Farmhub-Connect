@@ -28,17 +28,10 @@
             <li><a href="#service">Services</a></li>
             <li><a href="#explore">Explore</a></li>
             <li><a href="#contact">Contact</a></li>
+            <input type="text" id="searchInput" placeholder="Search for products...">
         </ul>
-        <div class="search-bar">
         
-
-          
-        </div>
-        
-        <div class="search-bar">
-          <input type="text" id="searchInput" placeholder="Search for products...">
-          <button class="btn" id="searchButton">Search</button>
-        </div>
+      
       
       
 
@@ -72,25 +65,29 @@
           <span><i class="ri-user-fill"></i></span>
           <div>
             <label for="guest">FARMERS</label>
-            <input type="text" placeholder="Guest" />
+            <a href="./login.html"><input type="text" placeholder="SIGN UP" /></a>
           </div>
         </div>
         <div class="input__group input__btn">
           <a href="./login.html"button class="btn">Login</button></a>
         </div>
-        <div class="about__image">
-          <img src="assets/know.jpg" alt="about" />
-        </div>
-        <div class="about__content">
-          <p class="section__subheader">WELCOME</p>
-          <h2 class="section__header">HOW IT WORKS</h2>
-          <p class="section__description">
-            
-Farmhub Connect facilitates a dual-login system for customers and farmers. 🌱 Farmers sign up to upload their product listings, while customers sign up to view these listings. 🛒 Once logged in, customers can browse the farmers' products and access their contact information for further interaction. 📲
-          </p>
-          
-        </div>
+       
       </form>
+   
+    </section>
+    <section class="section__container about__container" id="about">
+      <div class="about__image">
+        <img src="assets/know.jpg" alt="about" />
+      </div>
+      <div class="about__content">
+        <p class="section__subheader">WELCOME</p>
+        <h2 class="section__header">HOW IT WORKS</h2>
+        <p class="section__description">
+          
+Farmhub Connect facilitates a dual-login system for customers and farmers. 🌱 Farmers sign up to upload their product listings, while customers sign up to view these listings. 🛒 Once logged in, customers can browse the farmers' products and access their contact information for further interaction. 📲
+        </p>
+        
+      </div>
     </section>
 
 
@@ -119,9 +116,7 @@ Farmhub Connect facilitates a dual-login system for customers and farmers. 🌱 
 
             FarmHub Connect goes "Beyond the Market, Into the Fields" 🌱 Our platform empowers farmers to showcase their products and connect with customers directly, bridging the gap between fields and marketplaces. Join us in cultivating a sustainable future for farming communities worldwide! 🌍 #FarmHubConnect #FarmingCommunity 🌽🥕🍅🥦🌻
         </p>
-        <div class="about__btn">
-          <button class="btn">Read More</button>
-        </div>
+       
       </div>
     </section>
 
@@ -175,9 +170,9 @@ Farmhub Connect facilitates a dual-login system for customers and farmers. 🌱 
       <h2 class="section__header">What's New Today.</h2>
       <div class="explore__bg">
         <div class="explore__content">
-          <p class="section__description">26th FEB 2024</p>
-          <h4>A New Farmer Available On Our Platform.</h4>
-          <button class="btn">Continue</button>
+          <p class="section__description">18th MARC 2024</p>
+          <h4>Farmers Available On Our Platform.</h4>
+          
         </div>
       </div>
     </section>
@@ -211,9 +206,9 @@ Farmhub Connect facilitates a dual-login system for customers and farmers. 🌱 
             <li><a href="#">Transaction</a></li>
             <li><a href="#">Build Connections</a></li>
           </ul>
+          
         </div>
-
-       
+        <div class="footer__col">
           <h4>CONTACT US</h4>
          
           <div class="footer__socials">
@@ -221,6 +216,10 @@ Farmhub Connect facilitates a dual-login system for customers and farmers. 🌱 
             <a href="https://www.instagram.com/invites/contact/?i=18714wcr47hrk&utm_content=tw0sfhg"><img src="assets/instagram.png" alt="instagram" /></a>
             <a href="https://twitter.com/FarmHubConnect"><img src="assets/twitter.png" alt="twitter" /></a>
           </div>
+        </div>
+
+       
+          
         </div>
       </div>
       
@@ -232,7 +231,7 @@ Farmhub Connect facilitates a dual-login system for customers and farmers. 🌱 
       };
   
       function fetchProducts() {
-          fetch('https://farmhub-backend.onrender.com/api/products') 
+          fetch('http://127.0.0.1:3000/api/products') 
               .then(response => response.json())
               .then(products => {
                   console.log('Products:', products); 
@@ -248,7 +247,7 @@ Farmhub Connect facilitates a dual-login system for customers and farmers. 🌱 
        function searchProducts() {
           const searchText = document.getElementById('searchInput').value;
           if (searchText.trim() !== '') {
-              fetch(`https://farmhub-backend.onrender.com/api/products/filter/${encodeURIComponent(searchText)}`)
+              fetch(`http://127.0.0.1:3000/api/products/filter/${encodeURIComponent(searchText)}`)
                   .then(response => response.json())
                   .then(products => {
                       renderProducts(products);
@@ -316,7 +315,7 @@ Farmhub Connect facilitates a dual-login system for customers and farmers. 🌱 
           }
       }
   </script>
-  <iframe	style="width: 400px; height: 600px;" src="https://app.fastbots.ai/embed/clsyk0kxi010bs9b3age7yrid"></iframe>
+  <iframe	style="width: 400px; height: 600px;" src="https://app.fastbots.ai/embed/clttvf6e1002jnhb35rtn0lgw"></iframe>
   
 
     <script src="https://unpkg.com/scrollreveal"></script>
